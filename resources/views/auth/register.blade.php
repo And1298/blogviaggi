@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container">
-        <div class="row vh-100 flex-column justify-content-center align-items-center">
+        <div class="row my-vh flex-column justify-content-center align-items-center">
             <div class="col-3 mb-5"><h1 class="mb-5">Register form</h1></div>
             <div class="col-3">
                 <form method="post" action="{{ route('register') }}">
