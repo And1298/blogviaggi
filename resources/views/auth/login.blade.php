@@ -1,7 +1,8 @@
 <x-layout>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-8">
+        <div class="row flex-column justify-content-center vh-100 align-items-center">
+            <div class="col-3 mb-5"><h1 class="mb-5">Login form</h1></div>
+            <div class="col-3">
                 <form method="post" action="{{ route('login') }}">
                     @csrf
                     <div class="mb-3">
@@ -18,7 +19,7 @@
                         <div class="alert text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-violet">Accedi</button>
+                    <button type="submit" class="btn btn-danger">Accedi</button>
                 </form>
             </div>
         </div>

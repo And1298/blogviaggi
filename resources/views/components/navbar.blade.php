@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary @if(Route::currentRouteName() == 'login' || Route::currentRouteName() == 'register') fixed-top @endif">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('home') }}">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -18,19 +18,13 @@
                     <a class="nav-link @if(Route::currentRouteName() == 'register') active @endif" href="{{ route('register') }}">Register</a>
                 </li>
                 @endguest
-                @auth
-                <li class="nav-item">
-                    <form action="{{ route('logout') }}" method="post">
-                        @csrf
-                        <button class="btn btn-danger" type="submit">logout</button>
-                    </form>
-                </li>                    
-                @endauth
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            @auth
+            <form action="{{ route('logout') }}" method="post">
+                @csrf
+                <button class="btn btn-danger" type="submit">logout</button>
+            </form>                 
+            @endauth
         </div>
     </div>
 </nav>

@@ -1,7 +1,8 @@
 <x-layout>
     <div class="container">
-        <div class="row">
-            <div class="col-8">
+        <div class="row vh-100 flex-column justify-content-center align-items-center">
+            <div class="col-3 mb-5"><h1 class="mb-5">Register form</h1></div>
+            <div class="col-3">
                 <form method="post" action="{{ route('register') }}">
                     @csrf
                     <div class="mb-3">
@@ -32,7 +33,7 @@
                         <div class="alter text-dander">{{ $message }}</div>
                         @enderror
                     </div>
-                    <button type="submit" class="my-btn">Sign Up</button>
+                    <button type="submit" class="btn btn-danger">Sign Up</button>
                 </form>
             </div>
         </div>
